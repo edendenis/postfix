@@ -12,7 +12,7 @@ _This document contains the main commands and settings to install/configure/use 
 
 ### `postfix`
 
-O `Postfix` é um popular servidor de email de código aberto projetado para ser rápido, fácil de configurar e altamente seguro. Ele é amplamente utilizado em servidores Unix-like, incluindo Linux. O `Postfix` gerencia o envio, recebimento e encaminhamento de emails, suportando protocolos como SMTP, SMTPS e TLS para comunicações seguras. Sua arquitetura modular e configuração flexível o tornam uma escolha confiável para hospedar serviços de email em ambientes corporativos e de servidor.
+O `Postfix` é um popular servidor de email de código aberto projetado para ser rápido, fácil de configurar e altamente seguro. Ele é amplamente utilizado em servidores `Unix-like`, incluindo `Linux`. O `Postfix` gerencia o envio, recebimento e encaminhamento de emails, suportando protocolos como SMTP, SMTPS e TLS para comunicações seguras. Sua arquitetura modular e configuração flexível o tornam uma escolha confiável para hospedar serviços de email em ambientes corporativos e de servidor.
 
 
 ## 1. Configurar/Instalar/Usar o `postfix` no `Linux Ubuntu` [1]
@@ -41,17 +41,27 @@ Para configurar/instalar/usar o `postfix` no `Linux Ubuntu`, você pode usar o g
     2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
     
 
-3. **Instale o `Inkscape`**: Depois de atualizar a lista de pacotes, você pode instalar o `Inkscape` usando o comando abaixo: `sudo apt install inkscape -y`
+3. **Instale o `postfix`**: Execute o seguinte comando para instalar o `postfix`: `sudo apt install postfix -y`
 
-4. **Verifique a instalação**: Após a conclusão da instalação, você pode verificar se o `Inkscape` foi instalado corretamente executando o comando: `inkscape --version`
+4. **Configuração durante a instalação**: Durante o processo de instalação, será solicitado que você configure o `postfix`. Você verá uma tela com algumas opções. As opções mais comuns são:
 
-Se tudo estiver correto, você verá a versão do `postfix` instalada no seu sistema.
+    - **Internet site**: Esta é a escolha mais comum. O `postfix` será configurado para enviar e receber e-mails diretamente na internet.
 
-Esses comandos são suficientes para instalar o `postifix` no `Ubuntu` via `Terminal Emulator`.
+    - **Smarthost**: Escolha essa opção se você deseja encaminhar todos os e-mails para um servidor SMTP externo.
+
+    Selecione a opção que melhor se adequa às suas necessidades e continue com a configuração.
+
+5. **Configure o nome do sistema de e-mail**: Você também será solicitado a definir o `"mail name"` do sistema, que é o nome de domínio que será anexado ao final de cada endereço de e-mail local. Por exemplo, se você digitar `"meuservidor.com"`, e-mails enviados para `"usuario"` serão tratados como `"usuario@meuservidor.com"`.
+
+6. **Verifique o _status_ do `postfix`**: Após a instalação, você pode verificar se o postfix está rodando corretamente com o comando: `sudo systemctl status postfix`
+
+7. **Reinicie o `postfix` (se necessário)**: Se você fizer qualquer alteração no arquivo de configuração do `postfix`, lembre-se de reiniciar o serviço para que as mudanças tenham efeito: `sudo systemctl restart postfix`
+
+Seguindo esses passos, o `postfix` deverá estar instalado e configurado no seu sistema `Linux Ubuntu`.
 
 ## 1.1 Código completo para configurar/instalar/usar
 
-Para configurar/instalar/usar o `inkscape` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
+Para configurar/instalar/usar o `postfix` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
 
 1. Abra o `Terminal Emulator. Você pode fazer isso pressionando: `Ctrl + Alt + T`
 
@@ -66,13 +76,13 @@ Para configurar/instalar/usar o `inkscape` no `Linux Ubuntu` sem precisar digita
     sudo apt autoclean
     sudo apt list --upgradable
     sudo apt full-upgrade -y
-    sudo apt install inkscape -y
+    sudo apt install postfix -y
     inkscape --version
     ```
 
 ## Referências
 
-[1] OPENAI. ***Instalar inkscape no ubuntu.*** Disponível em: <https://chatgpt.com/c/335f2af0-cc09-4cc1-82a0-60c6824dd07d> (texto adaptado). ChatGPT. Acessado em: 25/10/2023 10:24.
+[1] OPENAI. ***Instalação do postfix ubuntu.*** Disponível em: <https://chatgpt.com/c/8e2db019-bece-4843-80d3-12a1f109fa77> (texto adaptado). ChatGPT. Acessado em: 17/08/2024 10:24.
 
-[2] OPENAI. ***Vs code: editor popular.*** Disponível em: <https://chat.openai.com/c/b640a25d-f8e3-4922-8a3b-ed74a2657e42> (texto adaptado). ChatGPT. Acessado em: 16/11/2023 10:06.
+[2] OPENAI. ***Vs code: editor popular.*** Disponível em: <https://chat.openai.com/c/b640a25d-f8e3-4922-8a3b-ed74a2657e42> (texto adaptado). ChatGPT. Acessado em: 17/08/2024 10:06.
 
