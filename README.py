@@ -48,9 +48,9 @@
 # 
 # 4. **Verifique a instalação**: Após a conclusão da instalação, você pode verificar se o `Inkscape` foi instalado corretamente executando o comando: `inkscape --version`
 # 
-# Se tudo estiver correto, você verá a versão do `Inkscape` instalada no seu sistema.
+# Se tudo estiver correto, você verá a versão do `postfix` instalada no seu sistema.
 # 
-# Esses comandos são suficientes para instalar o `Inkscape` no `Ubuntu` via `Terminal Emulator`.
+# Esses comandos são suficientes para instalar o `postifix` no `Ubuntu` via `Terminal Emulator`.
 
 # ## 1.1 Código completo para configurar/instalar/usar
 # 
